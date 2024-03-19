@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  open-interpreter:
+    image: open-interpreter
+    build:
+      context: ./container-simple
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+    tty: true
+    working_dir: /app
+    env_file:
+      - .env
